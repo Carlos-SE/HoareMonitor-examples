@@ -1,14 +1,3 @@
-/*
-En los monitores la funcionalidad de los elementos,
-en este caso de los fumadores y del estanquero se declaran
-como funciones externas al monitor.
-Todas las funcionalidades que requieran del monitor serán
-métodos públicos a los cuales podrán acceder por medio de un 
-parámetro monitor  los elementos del problema
-
-*/
-
-
 
 #include <iostream>
 #include <iomanip>
@@ -35,8 +24,6 @@ private:
 public:
 
 	Estanco();
-	//void Estanquero();
-	//void fumador(int ingrediente);
 	int generar_ingrediente();
 	void fumar(int f);
 
@@ -52,29 +39,6 @@ Estanco :: Estanco(){
 	estanquero = newCondVar();
 
 }
-
-/*void Estanco :: Estanquero(){
-	int f;
-	while (true){
-		f = generar_ingrediente();
-
-		fumadores[f].signal();
-
-		cout << "El estanquero ha producido el ingrediente " << f << endl;
-	}
-}*/
-
-
-
-
-/*void Estanco :: fumador(int ingrediente){
-	while (true){
-		fumadores[ingrediente].wait();
-		int tiempo = aleatorio<0, 15>();
-		this_thread::sleep_for(chrono::milliseconds(tiempo));
-		
-	}
-}*/
 
 int Estanco :: generar_ingrediente(){
 	//estanquero.wait();
